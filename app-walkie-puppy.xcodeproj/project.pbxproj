@@ -14,8 +14,6 @@
 		B78EA0A62AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B78EA0A42AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld */; };
 		B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */; };
 		B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */; };
-		B78EA0D62AF7E862001046E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0D52AF7E862001046E1 /* Main.storyboard */; };
-		B78EA0D82AF7E8F7001046E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0D72AF7E8F7001046E1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +26,6 @@
 		B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78EA0AA2AF7D0F1001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78EA0AC2AF7D0F1001046E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B78EA0D52AF7E862001046E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../WALKIE PUPP/app-walkie-puppy/Main.storyboard"; sourceTree = "<group>"; };
-		B78EA0D72AF7E8F7001046E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../WALKIE PUPP/app-walkie-puppy/Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +42,6 @@
 		B78EA08F2AF7D0EE001046E1 = {
 			isa = PBXGroup;
 			children = (
-				B78EA0D52AF7E862001046E1 /* Main.storyboard */,
-				B78EA0D72AF7E8F7001046E1 /* Main.storyboard */,
 				B78EA09A2AF7D0EE001046E1 /* app-walkie-puppy */,
 				B78EA0992AF7D0EE001046E1 /* Products */,
 			);
@@ -134,10 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */,
-				B78EA0D82AF7E8F7001046E1 /* Main.storyboard in Resources */,
 				B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */,
 				B78EA0A32AF7D0EE001046E1 /* Main.storyboard in Resources */,
-				B78EA0D62AF7E862001046E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
