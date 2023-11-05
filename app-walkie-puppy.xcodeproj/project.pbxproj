@@ -11,9 +11,9 @@
 		B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */; };
 		B78EA0A02AF7D0EE001046E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09F2AF7D0EE001046E1 /* ViewController.swift */; };
 		B78EA0A32AF7D0EE001046E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A12AF7D0EE001046E1 /* Main.storyboard */; };
-		B78EA0A62AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B78EA0A42AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld */; };
 		B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */; };
 		B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */; };
+		B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +22,10 @@
 		B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B78EA09F2AF7D0EE001046E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B78EA0A22AF7D0EE001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B78EA0A52AF7D0EE001046E1 /* app_huron_azul.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = app_huron_azul.xcdatamodel; sourceTree = "<group>"; };
 		B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78EA0AA2AF7D0F1001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78EA0AC2AF7D0F1001046E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B78EA0DD2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "app-walkie-puppy.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */,
 				B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */,
 				B78EA0AC2AF7D0F1001046E1 /* Info.plist */,
-				B78EA0A42AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld */,
+				B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */,
 			);
 			path = "app-walkie-puppy";
 			sourceTree = "<group>";
@@ -142,8 +142,8 @@
 			files = (
 				B78EA0A02AF7D0EE001046E1 /* ViewController.swift in Sources */,
 				B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */,
-				B78EA0A62AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld in Sources */,
 				B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */,
+				B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,13 +345,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B78EA0A42AF7D0EE001046E1 /* app_huron_azul.xcdatamodeld */ = {
+		B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B78EA0A52AF7D0EE001046E1 /* app_huron_azul.xcdatamodel */,
+				B78EA0DD2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodel */,
 			);
-			currentVersion = B78EA0A52AF7D0EE001046E1 /* app_huron_azul.xcdatamodel */;
-			path = app_huron_azul.xcdatamodeld;
+			currentVersion = B78EA0DD2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodel */;
+			path = "app-walkie-puppy.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
