@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/damii/Documents/GBL-apps/huron-azul/app-huron-azul/app-walkie-puppy.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

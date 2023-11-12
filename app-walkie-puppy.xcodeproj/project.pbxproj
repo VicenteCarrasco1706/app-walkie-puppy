@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,13 @@
 		B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */; };
 		B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */; };
 		B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */; };
+		B7D942E22B01210900351038 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D942E12B01210900351038 /* GoogleService-Info.plist */; };
+		B7D942E52B01281500351038 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E42B01281500351038 /* FirebaseAnalytics */; };
+		B7D942E72B01281500351038 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E62B01281500351038 /* FirebaseAuth */; };
+		B7D942E92B01281500351038 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E82B01281500351038 /* FirebaseAnalyticsSwift-Beta */; };
+		B7D942EB2B01281500351038 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942EA2B01281500351038 /* FirebaseDatabase */; };
+		B7D942ED2B01310600351038 /* AuthenticationFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */; };
+		B7D942EF2B01341100351038 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D942EE2B01341100351038 /* AuthenticationRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,9 @@
 		B78EA0AA2AF7D0F1001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78EA0AC2AF7D0F1001046E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B78EA0DD2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "app-walkie-puppy.xcdatamodel"; sourceTree = "<group>"; };
+		B7D942E12B01210900351038 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFirebaseDataSource.swift; sourceTree = "<group>"; };
+		B7D942EE2B01341100351038 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D942E92B01281500351038 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				B7D942E52B01281500351038 /* FirebaseAnalytics in Frameworks */,
+				B7D942EB2B01281500351038 /* FirebaseDatabase in Frameworks */,
+				B7D942E72B01281500351038 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +76,9 @@
 				B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */,
 				B78EA09F2AF7D0EE001046E1 /* ViewController.swift */,
 				B78EA0A12AF7D0EE001046E1 /* Main.storyboard */,
+				B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */,
+				B7D942EE2B01341100351038 /* AuthenticationRepository.swift */,
+				B7D942E12B01210900351038 /* GoogleService-Info.plist */,
 				B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */,
 				B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */,
 				B78EA0AC2AF7D0F1001046E1 /* Info.plist */,
@@ -86,6 +103,12 @@
 			dependencies = (
 			);
 			name = "app-walkie-puppy";
+			packageProductDependencies = (
+				B7D942E42B01281500351038 /* FirebaseAnalytics */,
+				B7D942E62B01281500351038 /* FirebaseAuth */,
+				B7D942E82B01281500351038 /* FirebaseAnalyticsSwift-Beta */,
+				B7D942EA2B01281500351038 /* FirebaseDatabase */,
+			);
 			productName = "app-huron-azul";
 			productReference = B78EA0982AF7D0EE001046E1 /* app-walkie-puppy.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +136,9 @@
 				Base,
 			);
 			mainGroup = B78EA08F2AF7D0EE001046E1;
+			packageReferences = (
+				B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B78EA0992AF7D0EE001046E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */,
+				B7D942E22B01210900351038 /* GoogleService-Info.plist in Resources */,
 				B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */,
 				B78EA0A32AF7D0EE001046E1 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +169,8 @@
 			files = (
 				B78EA0A02AF7D0EE001046E1 /* ViewController.swift in Sources */,
 				B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */,
+				B7D942ED2B01310600351038 /* AuthenticationFirebaseDataSource.swift in Sources */,
+				B7D942EF2B01341100351038 /* AuthenticationRepository.swift in Sources */,
 				B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */,
 				B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */,
 			);
@@ -343,6 +372,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7D942E42B01281500351038 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B7D942E62B01281500351038 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		B7D942E82B01281500351038 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
+		B7D942EA2B01281500351038 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7D942E32B01281500351038 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */ = {
