@@ -70,7 +70,7 @@
         <!--View Controller-->
         <scene sceneID="dDr-bz-t4H">
             <objects>
-                <viewController id="bzi-P0-7yC" sceneMemberID="viewController">
+                <viewController id="bzi-P0-7yC" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pHw-E0-Bua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1139.1304347826087" y="81.696428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Auth View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_walkie_puppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="app_walkie_puppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,33 +144,39 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcQ-oJ-WX8">
-                                <rect key="frame" x="133.5" y="717" width="147" height="30"/>
+                                <rect key="frame" x="130" y="795" width="147" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="CREAR UNA CUENTA"/>
-                                <connections>
-                                    <segue destination="SeX-yL-mP0" kind="show" id="84n-yr-niB"/>
-                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jmn-aY-3hT">
-                                <rect key="frame" x="70" y="477" width="274" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-We-Y9I">
                                 <rect key="frame" x="87" y="173" width="240" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo1-2V-hnN">
-                                <rect key="frame" x="91" y="647" width="232" height="39"/>
+                                <rect key="frame" x="87" y="635" width="232" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
+                                    <action selector="logInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SNb-Ih-Imw"/>
                                     <segue destination="bzi-P0-7yC" kind="show" id="qLn-u9-Exc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9dm-wQ-q50">
+                                <rect key="frame" x="70" y="467" width="274" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s18-1q-t8O">
+                                <rect key="frame" x="87" y="702" width="232" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="REGISTRAR"/>
+                                <connections>
+                                    <action selector="singUpButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lnd-JI-iQ4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -178,15 +184,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="B41-ET-15w"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="9dm-wQ-q50" id="vvy-V3-Zcc"/>
+                        <outlet property="logInButton" destination="Zo1-2V-hnN" id="0hq-BJ-ShB"/>
+                        <outlet property="passwordTextField" destination="PxC-CD-1p2" id="NKq-Lr-1LQ"/>
+                        <outlet property="singUpButton" destination="s18-1q-t8O" id="OfR-Lp-JYu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2862.3188405797105" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="8KE-3A-9i2">
             <objects>
-                <viewController id="SeX-yL-mP0" sceneMemberID="viewController">
+                <viewController id="SeX-yL-mP0" customClass="HomeViewController" customModule="app_walkie_puppy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7p9-vB-7hL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,13 +232,18 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-27-ocQ">
                                 <rect key="frame" x="97" y="630" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="REGISTRAR"/>
+                                <state key="normal" title="Cerrar Sesion"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o4D-Jm-od6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uyn-ZE-LLM"/>
+                    <connections>
+                        <outlet property="closeSessionButton" destination="d6F-27-ocQ" id="sQx-aP-Bst"/>
+                        <outlet property="emailLabel" destination="lFV-xz-Gs2" id="9em-MW-O8p"/>
+                        <outlet property="providerLabel" destination="LyM-t1-dRh" id="gCN-bB-jIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCu-fo-pB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,8 +324,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Gha-4P-Uwg"/>
-        <segue reference="a09-ce-eBC"/>
+        <segue reference="qLn-u9-Exc"/>
         <segue reference="LNy-TY-LxG"/>
     </inferredMetricsTieBreakers>
     <resources>

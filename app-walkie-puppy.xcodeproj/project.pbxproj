@@ -9,33 +9,31 @@
 /* Begin PBXBuildFile section */
 		B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09B2AF7D0EE001046E1 /* AppDelegate.swift */; };
 		B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */; };
-		B78EA0A02AF7D0EE001046E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09F2AF7D0EE001046E1 /* ViewController.swift */; };
+		B78EA0A02AF7D0EE001046E1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09F2AF7D0EE001046E1 /* AuthViewController.swift */; };
 		B78EA0A32AF7D0EE001046E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A12AF7D0EE001046E1 /* Main.storyboard */; };
 		B78EA0A82AF7D0F1001046E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */; };
 		B78EA0AB2AF7D0F1001046E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */; };
 		B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */; };
+		B79650132B09600E00932CD4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79650122B09600E00932CD4 /* HomeViewController.swift */; };
 		B7D942E22B01210900351038 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B7D942E12B01210900351038 /* GoogleService-Info.plist */; };
 		B7D942E52B01281500351038 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E42B01281500351038 /* FirebaseAnalytics */; };
 		B7D942E72B01281500351038 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E62B01281500351038 /* FirebaseAuth */; };
 		B7D942E92B01281500351038 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942E82B01281500351038 /* FirebaseAnalyticsSwift-Beta */; };
 		B7D942EB2B01281500351038 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B7D942EA2B01281500351038 /* FirebaseDatabase */; };
-		B7D942ED2B01310600351038 /* AuthenticationFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */; };
-		B7D942EF2B01341100351038 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D942EE2B01341100351038 /* AuthenticationRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B78EA0982AF7D0EE001046E1 /* app-walkie-puppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-walkie-puppy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78EA09B2AF7D0EE001046E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B78EA09F2AF7D0EE001046E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B78EA09F2AF7D0EE001046E1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		B78EA0A22AF7D0EE001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B78EA0AA2AF7D0F1001046E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B78EA0AC2AF7D0F1001046E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B78EA0DD2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "app-walkie-puppy.xcdatamodel"; sourceTree = "<group>"; };
+		B79650122B09600E00932CD4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B7D942E12B01210900351038 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFirebaseDataSource.swift; sourceTree = "<group>"; };
-		B7D942EE2B01341100351038 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,15 +72,14 @@
 			children = (
 				B78EA09B2AF7D0EE001046E1 /* AppDelegate.swift */,
 				B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */,
-				B78EA09F2AF7D0EE001046E1 /* ViewController.swift */,
+				B78EA09F2AF7D0EE001046E1 /* AuthViewController.swift */,
 				B78EA0A12AF7D0EE001046E1 /* Main.storyboard */,
-				B7D942EC2B01310600351038 /* AuthenticationFirebaseDataSource.swift */,
-				B7D942EE2B01341100351038 /* AuthenticationRepository.swift */,
 				B7D942E12B01210900351038 /* GoogleService-Info.plist */,
 				B78EA0A72AF7D0F1001046E1 /* Assets.xcassets */,
 				B78EA0A92AF7D0F1001046E1 /* LaunchScreen.storyboard */,
 				B78EA0AC2AF7D0F1001046E1 /* Info.plist */,
 				B78EA0DC2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld */,
+				B79650122B09600E00932CD4 /* HomeViewController.swift */,
 			);
 			path = "app-walkie-puppy";
 			sourceTree = "<group>";
@@ -167,10 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B78EA0A02AF7D0EE001046E1 /* ViewController.swift in Sources */,
+				B79650132B09600E00932CD4 /* HomeViewController.swift in Sources */,
+				B78EA0A02AF7D0EE001046E1 /* AuthViewController.swift in Sources */,
 				B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */,
-				B7D942ED2B01310600351038 /* AuthenticationFirebaseDataSource.swift in Sources */,
-				B7D942EF2B01341100351038 /* AuthenticationRepository.swift in Sources */,
 				B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */,
 				B78EA0DE2AF7F0E6001046E1 /* app-walkie-puppy.xcdatamodeld in Sources */,
 			);

@@ -7,6 +7,7 @@
 
 import Foundation
 final class AuthenticationRepository{
+    
     private let authenticationFirebaseDataSource: AuthenticationFirebaseDataSource
     
     init(authenticationFirebaseDataSource: AuthenticationFirebaseDataSource){
