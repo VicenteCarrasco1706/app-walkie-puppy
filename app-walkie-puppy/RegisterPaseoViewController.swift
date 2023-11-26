@@ -8,16 +8,65 @@
 import UIKit
 import Firebase
 
-class RegisterPaseoViewController: UIViewController {
+class RegisterPaseoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var fechaTextField: UITextField!
     @IBOutlet weak var horaTextField: UITextField!
     @IBOutlet weak var direccionTextField: UITextField!
+
+ 
+    let pickerView = UIPickerView()
+    let datePicker = UIDatePicker()
+
+    let horas: [String] = ["08:00 am", "09:00 am", "10:00 am", "11:00 am", "12:00 pm", "01:00 pm", "02:00 pm", "03:00 pm", "04:00 pm", "05:00 pm"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Configura el UIPickerView para las horas
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        horaTextField.inputView = pickerView
+
+        // Configura el UIDatePicker para las fechas y horas
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 15, to: Date()) // Establece el límite mínimo a 15 días en el futuro
+        fechaTextField.inputView = datePicker
+
+        // Configura el UIToolbar para ambos pickers
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePicker))
+        toolbar.setItems([doneButton], animated: false)
+
+        horaTextField.inputAccessoryView = toolbar
+        fechaTextField.inputAccessoryView = toolbar
+    }
+
+    @objc func donePicker() {
+        // Oculta ambos pickers al presionar "Done"
+        horaTextField.resignFirstResponder()
+        fechaTextField.resignFirstResponder()
+    }
+
+    // Implementa el protocolo UIPickerViewDelegate y UIPickerViewDataSource
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return horas.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return horas[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        horaTextField.text = horas[row]
     }
     
     @IBAction func registrarPaseoButtonTapped(_ sender: Any) {
