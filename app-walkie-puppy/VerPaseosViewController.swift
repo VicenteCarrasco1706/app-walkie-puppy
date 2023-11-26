@@ -32,6 +32,7 @@ struct Paseo {
 class VerPaseosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableview: UITableView!
+    
     var paseos: [Paseo] = []
     
     override func viewDidLoad() {
@@ -39,7 +40,7 @@ class VerPaseosViewController: UIViewController, UITableViewDataSource, UITableV
         setupTableView()
         loadPaseosFromFirebase()
         // Do any additional setup after loading the view.
-        tableview.register(UITableView.self, forCellReuseIdentifier: "PaseoCell")
+        //tableview.register(UITableViewCell.self, forCellReuseIdentifier: "PaseoCell")
     }
     
     func setupTableView() {
@@ -75,11 +76,54 @@ class VerPaseosViewController: UIViewController, UITableViewDataSource, UITableV
             let cell = tableView.dequeueReusableCell(withIdentifier: "PaseoCell", for: indexPath)
             let paseo = paseos[indexPath.row]
             // Configurar la celda con los datos del paseo
-            cell.textLabel?.text = paseo.nombre
+            cell.textLabel?.text = "Nombre: \(paseo.nombre)"
+            cell.detailTextLabel?.text = "Fecha: \(paseo.fecha) Hora: \(paseo.hora) Dirección: \(paseo.direccion)"
+
             // Añadir configuración adicional según tus necesidades
             return cell
         }
+    
+    // Implementa este método para permitir la edición de las celdas
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
+    // Implementa este método para definir el estilo de edición y las acciones disponibles
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let paseo = paseos[indexPath.row]
+            paseos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // Elimina el paseo de Firebase según nombre y fecha
+            deletePaseoFromFirebase(nombre: paseo.nombre, fecha: paseo.fecha)
+        }
+    }
+
+    func deletePaseoFromFirebase(nombre: String, fecha: String) {
+        let paseosRef = Database.database().reference().child("paseos")
+        
+        // Busca el paseo por nombre y fecha y elimínalo
+        paseosRef.queryOrdered(byChild: "nombre").queryEqual(toValue: nombre)
+            .observeSingleEvent(of: .value) { snapshot in
+                for child in snapshot.children {
+                    if let snapshot = child as? DataSnapshot {
+                        // Verifica que la fecha también coincida
+                        if let paseoData = snapshot.value as? [String: Any],
+                           let paseoFecha = paseoData["fecha"] as? String, paseoFecha == fecha {
+                            // Elimina el paseo de Firebase
+                            paseosRef.child(snapshot.key).removeValue { error, _ in
+                                if let error = error {
+                                    print("Error al eliminar el paseo de Firebase: \(error.localizedDescription)")
+                                } else {
+                                    print("Paseo eliminado correctamente de Firebase")
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
 
 
     
