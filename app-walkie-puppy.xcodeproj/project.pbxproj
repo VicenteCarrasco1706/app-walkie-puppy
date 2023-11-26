@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B786A8EB2B13A541007C3E59 /* RegisterUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B786A8EA2B13A541007C3E59 /* RegisterUsuarioViewController.swift */; };
 		B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09B2AF7D0EE001046E1 /* AppDelegate.swift */; };
 		B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */; };
 		B78EA0A02AF7D0EE001046E1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78EA09F2AF7D0EE001046E1 /* AuthViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B786A8EA2B13A541007C3E59 /* RegisterUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUsuarioViewController.swift; sourceTree = "<group>"; };
 		B78EA0982AF7D0EE001046E1 /* app-walkie-puppy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-walkie-puppy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78EA09B2AF7D0EE001046E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B78EA09D2AF7D0EE001046E1 /* SceneDelegate.swift */,
 				B78EA09F2AF7D0EE001046E1 /* AuthViewController.swift */,
 				B78EA0A12AF7D0EE001046E1 /* Main.storyboard */,
+				B786A8EA2B13A541007C3E59 /* RegisterUsuarioViewController.swift */,
 				B7C3FC0F2B0A69C00025FCAD /* VerPaseosViewController.swift */,
 				B7C3FC0D2B0A62B40025FCAD /* RegisterPaseoViewController.swift */,
 				B7C3FC0B2B0A49680025FCAD /* InicioViewController.swift */,
@@ -172,6 +175,7 @@
 			files = (
 				B7C3FC0C2B0A49680025FCAD /* InicioViewController.swift in Sources */,
 				B78EA0A02AF7D0EE001046E1 /* AuthViewController.swift in Sources */,
+				B786A8EB2B13A541007C3E59 /* RegisterUsuarioViewController.swift in Sources */,
 				B7C3FC0E2B0A62B40025FCAD /* RegisterPaseoViewController.swift in Sources */,
 				B78EA09C2AF7D0EE001046E1 /* AppDelegate.swift in Sources */,
 				B78EA09E2AF7D0EE001046E1 /* SceneDelegate.swift in Sources */,
