@@ -81,10 +81,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9Y-Nt-wu3">
-                                <rect key="frame" x="42" y="233" width="325" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-l7-58P">
                                 <rect key="frame" x="80" y="490" width="254" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,6 +103,10 @@
                                     <segue destination="xdI-76-u3Y" kind="show" id="yCj-Mf-H0N"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paseo" translatesAutoresizingMaskIntoConstraints="NO" id="s9Y-Nt-wu3">
+                                <rect key="frame" x="36" y="235" width="342" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9kn-ey-u3w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,10 +145,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-We-Y9I">
-                                <rect key="frame" x="87" y="173" width="240" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo1-2V-hnN">
                                 <rect key="frame" x="87" y="635" width="232" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -174,6 +170,10 @@
                                     <segue destination="0Zj-Gl-0Wk" kind="show" id="rUA-tN-CVn"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="PdY-We-Y9I">
+                                <rect key="frame" x="33" y="157" width="348" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -231,6 +231,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="registro" translatesAutoresizingMaskIntoConstraints="NO" id="7wH-kS-Dmg">
+                                <rect key="frame" x="23" y="139" width="374" height="263"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HbR-9c-YW7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -405,10 +409,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bm7-nI-PBe"/>
-        <segue reference="ibH-Qv-bY3"/>
+        <segue reference="8Ud-Kx-KHE"/>
+        <segue reference="yCj-Mf-H0N"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="login" width="690" height="460"/>
+        <image name="paseo" width="1000" height="750"/>
+        <image name="registro" width="1200" height="1197"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

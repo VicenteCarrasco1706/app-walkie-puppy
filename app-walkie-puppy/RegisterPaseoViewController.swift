@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class RegisterPaseoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class RegisterPaseoViewController: UIViewController{
 
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var fechaTextField: UITextField!
@@ -17,98 +17,115 @@ class RegisterPaseoViewController: UIViewController, UIPickerViewDelegate, UIPic
 
  
     let pickerView = UIPickerView()
-    let datePicker = UIDatePicker()
+     let datePicker = UIDatePicker()
 
-    let horas: [String] = ["08:00 am", "09:00 am", "10:00 am", "11:00 am", "12:00 pm", "01:00 pm", "02:00 pm", "03:00 pm", "04:00 pm", "05:00 pm"]
+     let horas: [String] = ["08:00 am", "09:00 am", "10:00 am", "11:00 am", "12:00 pm", "01:00 pm", "02:00 pm", "03:00 pm", "04:00 pm", "05:00 pm"]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+     var selectedDate: Date?
 
-        // Configura el UIPickerView para las horas
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        horaTextField.inputView = pickerView
+     override func viewDidLoad() {
+         super.viewDidLoad()
 
-        // Configura el UIDatePicker para las fechas y horas
-        datePicker.datePickerMode = .dateAndTime
-        datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 15, to: Date()) // Establece el límite mínimo a 15 días en el futuro
-        fechaTextField.inputView = datePicker
+         // Configura el UIPickerView para las horas
+         pickerView.delegate = self
+         pickerView.dataSource = self
+         horaTextField.inputView = pickerView
 
-        // Configura el UIToolbar para ambos pickers
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
+         // Configura el UIDatePicker para las fechas y horas
+         datePicker.datePickerMode = .date
+         datePicker.minimumDate = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+         datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: 15, to: Date())
+         fechaTextField.inputView = datePicker
 
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePicker))
-        toolbar.setItems([doneButton], animated: false)
+         // Configura el UIToolbar para ambos pickers
+         let toolbar = UIToolbar()
+         toolbar.sizeToFit()
 
-        horaTextField.inputAccessoryView = toolbar
-        fechaTextField.inputAccessoryView = toolbar
-    }
+         let doneButton = UIBarButtonItem(title: "Cerrar", style: .done, target: self, action: #selector(donePicker))
+         toolbar.setItems([doneButton], animated: false)
 
-    @objc func donePicker() {
-        // Oculta ambos pickers al presionar "Done"
-        horaTextField.resignFirstResponder()
-        fechaTextField.resignFirstResponder()
-    }
+         horaTextField.inputAccessoryView = toolbar
+         fechaTextField.inputAccessoryView = toolbar
 
-    // Implementa el protocolo UIPickerViewDelegate y UIPickerViewDataSource
+         // Configura el delegado del textField de fecha
+         fechaTextField.delegate = self
+     }
 
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+     @objc func donePicker() {
+         // Oculta ambos pickers al presionar "Done"
+         horaTextField.resignFirstResponder()
+         fechaTextField.resignFirstResponder()
+     }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return horas.count
-    }
+     @IBAction func registrarPaseoButtonTapped(_ sender: Any) {
+         guard let nombre = nombreTextField.text,
+               let hora = horaTextField.text,
+               let direccion = direccionTextField.text,
+               let selectedDate = selectedDate else {
+             print("Por favor, complete todos los campos.")
+             return
+         }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return horas[row]
-    }
+         // Formatea la fecha seleccionada antes de registrar en Firebase
+         let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "dd/MM/yyyy"
+         let fecha = dateFormatter.string(from: selectedDate)
 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        horaTextField.text = horas[row]
-    }
-    
-    @IBAction func registrarPaseoButtonTapped(_ sender: Any) {
-        // Recolecta la información del paseo desde los campos de texto
-                guard let nombre = nombreTextField.text,
-                      let fecha = fechaTextField.text,
-                      let hora = horaTextField.text,
-                      let direccion = direccionTextField.text else {
-                    // Maneja la situación donde no se ingresaron todos los datos
-                    print("Por favor, complete todos los campos.")
-                    return
-    }
-        // Llama a la función para registrar el paseo en Firebase
-                registrarPaseoEnFirebase(nombre: nombre, fecha: fecha, hora: hora, direccion: direccion)
-            }
+         // Llama a la función para registrar el paseo en Firebase
+         registrarPaseoEnFirebase(nombre: nombre, fecha: fecha, hora: hora, direccion: direccion)
+     }
 
-            func registrarPaseoEnFirebase(nombre: String, fecha: String, hora: String, direccion: String) {
-                let paseoRef = Database.database().reference().child("paseos").childByAutoId()
-                let paseoData: [String: Any] = [
-                    "nombre": nombre,
-                    "fecha": fecha,
-                    "hora": hora,
-                    "direccion": direccion
-                ]
-                paseoRef.setValue(paseoData) { (error, _) in
-                    if let error = error {
-                        print("Error al registrar el paseo en Firebase: \(error.localizedDescription)")
-                    } else {
-                        print("Paseo registrado en Firebase exitosamente")
-                        // Puedes agregar aquí cualquier código adicional después de registrar el paseo
-                    }
-                }
-            }
-    
-    /*
-    // MARK: - Navigation
+     func registrarPaseoEnFirebase(nombre: String, fecha: String, hora: String, direccion: String) {
+         let paseoRef = Database.database().reference().child("paseos").childByAutoId()
+         let paseoData: [String: Any] = [
+             "nombre": nombre,
+             "fecha": fecha,
+             "hora": hora,
+             "direccion": direccion
+         ]
+         paseoRef.setValue(paseoData) { (error, _) in
+             if let error = error {
+                 print("Error al registrar el paseo en Firebase: \(error.localizedDescription)")
+             } else {
+                 print("Paseo registrado en Firebase exitosamente")
+                 // Puedes agregar aquí cualquier código adicional después de registrar el paseo
+             }
+         }
+     }
+ }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ extension RegisterPaseoViewController: UITextFieldDelegate {
+     func textFieldDidBeginEditing(_ textField: UITextField) {
+         if textField == fechaTextField {
+             // Abre el selector de fecha cuando se selecciona el campo de texto de fecha
+             datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+         }
+     }
 
-}
+     @objc func datePickerValueChanged() {
+         // Actualiza el campo de texto de fecha con la fecha seleccionada
+         let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "dd/MM/yyyy"
+         fechaTextField.text = dateFormatter.string(from: datePicker.date)
+         selectedDate = datePicker.date
+     }
+ }
+
+ // Implementa el protocolo UIPickerViewDelegate y UIPickerViewDataSource
+ extension RegisterPaseoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+         return 1
+     }
+
+     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         return horas.count
+     }
+
+     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+         return horas[row]
+     }
+
+     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         horaTextField.text = horas[row]
+     }
+ }
