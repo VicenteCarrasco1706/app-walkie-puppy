@@ -136,4 +136,6 @@ class VerPaseosViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     // ... Otros métodos y funciones
+    // ... Otros métodos y funciones
+    // ... Otros métodos y funciones
 }
