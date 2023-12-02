@@ -16,7 +16,14 @@ class RegisterUsuarioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        passwordTextField.isSecureTextEntry = true
+
+        // Configura el color de fondo para la vista principal (celeste claro)
+        view.backgroundColor = UIColor(red: 173.0/255.0, green: 216.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     }
+    
+    
+
 
     
     

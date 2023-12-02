@@ -117,7 +117,7 @@
             </objects>
             <point key="canvasLocation" x="2049.275362318841" y="81.696428571428569"/>
         </scene>
-        <!--Auth View Controller-->
+        <!--WALKIE PUPPY-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AuthViewController" customModule="app_walkie_puppy" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +178,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="B41-ET-15w"/>
+                    <navigationItem key="navigationItem" title="WALKIE PUPPY" id="B41-ET-15w"/>
                     <connections>
                         <outlet property="emailTextField" destination="9dm-wQ-q50" id="vvy-V3-Zcc"/>
                         <outlet property="logInButton" destination="Zo1-2V-hnN" id="0hq-BJ-ShB"/>
@@ -212,19 +212,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RlN-jf-DC1">
-                                <rect key="frame" x="59" y="607" width="303" height="34"/>
+                                <rect key="frame" x="59" y="587" width="303" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39a-zC-Ur4">
-                                <rect key="frame" x="167" y="691" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="REGISTRAR"/>
-                                <connections>
-                                    <action selector="singUpButtonAction:" destination="0Zj-Gl-0Wk" eventType="touchUpInside" id="Aq7-DA-S7a"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hdf-3z-it8" customClass="regis">
                                 <rect key="frame" x="56" y="474" width="303" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,6 +227,17 @@
                                 <rect key="frame" x="23" y="139" width="374" height="263"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39a-zC-Ur4">
+                                <rect key="frame" x="95" y="689" width="224" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="REGISTRAR"/>
+                                <connections>
+                                    <action selector="singUpButtonAction:" destination="0Zj-Gl-0Wk" eventType="touchUpInside" id="Aq7-DA-S7a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HbR-9c-YW7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -298,14 +301,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IY-yB-pkS">
-                                <rect key="frame" x="47" y="520" width="321" height="34"/>
+                                <rect key="frame" x="47" y="509" width="321" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0k-tR-Ukk">
-                                <rect key="frame" x="167" y="602" width="81" height="30"/>
+                                <rect key="frame" x="86" y="602" width="243" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="REGISTRAR"/>
                                 <connections>
                                     <action selector="registrarPaseoButtonTapped:" destination="egL-yW-gcj" eventType="touchUpInside" id="XUU-ur-Ag7"/>
