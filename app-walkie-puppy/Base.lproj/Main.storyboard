@@ -89,7 +89,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Programa tu paseo"/>
                                 <connections>
-                                    <segue destination="egL-yW-gcj" kind="show" id="8Ud-Kx-KHE"/>
+                                    <segue destination="egL-yW-gcj" kind="show" id="hLe-wi-hSp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVm-AA-X34">
@@ -112,6 +112,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="EmK-Fj-oe8"/>
+                    <connections>
+                        <outlet property="listapaseo" destination="PVm-AA-X34" id="vRZ-CV-pQj"/>
+                        <outlet property="programapaseo" destination="Vep-l7-58P" id="7QM-hn-CRK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf8-RB-rAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,6 +338,7 @@
                         <outlet property="fechaTextField" destination="JPj-tf-fOv" id="zdA-dT-HSl"/>
                         <outlet property="horaTextField" destination="M9A-Be-8yq" id="1dA-es-bWH"/>
                         <outlet property="nombreTextField" destination="ACR-0p-i6v" id="hYo-9E-wiK"/>
+                        <outlet property="registrarpaseo" destination="s0k-tR-Ukk" id="jyK-gg-r03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozd-25-hbJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -398,6 +403,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Hrr-dQ-N2D">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRO-w3-ryJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gf9-2e-SHf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wu5-jH-oHQ">
@@ -409,13 +415,12 @@
                         <segue destination="egL-yW-gcj" kind="relationship" relationship="rootViewController" id="bm7-nI-PBe"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vRO-w3-ryJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2175.36231884058" y="101.78571428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Ud-Kx-KHE"/>
+        <segue reference="bm7-nI-PBe"/>
         <segue reference="yCj-Mf-H0N"/>
     </inferredMetricsTieBreakers>
     <resources>

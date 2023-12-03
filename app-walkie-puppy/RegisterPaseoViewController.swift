@@ -14,7 +14,8 @@ class RegisterPaseoViewController: UIViewController{
     @IBOutlet weak var fechaTextField: UITextField!
     @IBOutlet weak var horaTextField: UITextField!
     @IBOutlet weak var direccionTextField: UITextField!
-
+    @IBOutlet weak var registrarpaseo: UIButton!
+    
  
     let pickerView = UIPickerView()
      let datePicker = UIDatePicker()
@@ -25,6 +26,7 @@ class RegisterPaseoViewController: UIViewController{
 
      override func viewDidLoad() {
          super.viewDidLoad()
+        configureUI()
         // Configura el color de fondo para la vista principal (celeste claro)
         view.backgroundColor = UIColor(red: 173.0/255.0, green: 216.0/255.0, blue: 230.0/255.0, alpha: 1.0)
 
@@ -52,6 +54,23 @@ class RegisterPaseoViewController: UIViewController{
          // Configura el delegado del textField de fecha
          fechaTextField.delegate = self
      }
+    func configureUI() {
+
+        // Configura el estilo del botón de inicio de sesión
+        registrarpaseo.layer.cornerRadius = 8.0
+        registrarpaseo.backgroundColor = UIColor.blue
+        registrarpaseo.setTitleColor(UIColor.white, for: .normal)
+        
+    }
+
+    func configureTextField(_ textField: UITextField) {
+        textField.layer.cornerRadius = 8.0
+        textField.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        textField.textColor = UIColor.black
+        textField.tintColor = UIColor.blue
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    }
 
      @objc func donePicker() {
          // Oculta ambos pickers al presionar "Done"
@@ -76,6 +95,12 @@ class RegisterPaseoViewController: UIViewController{
          // Llama a la función para registrar el paseo en Firebase
          registrarPaseoEnFirebase(nombre: nombre, fecha: fecha, hora: hora, direccion: direccion)
      }
+    
+    func transitionToInicioViewController() {
+        if let inicioViewController = self.storyboard?.instantiateViewController(identifier: "InicioViewController") {
+            self.navigationController?.pushViewController(inicioViewController, animated: true)
+        }
+    }
 
      func registrarPaseoEnFirebase(nombre: String, fecha: String, hora: String, direccion: String) {
          let paseoRef = Database.database().reference().child("paseos").childByAutoId()
@@ -90,6 +115,7 @@ class RegisterPaseoViewController: UIViewController{
                  print("Error al registrar el paseo en Firebase: \(error.localizedDescription)")
              } else {
                  print("Paseo registrado en Firebase exitosamente")
+                self.transitionToInicioViewController()
                  // Puedes agregar aquí cualquier código adicional después de registrar el paseo
              }
          }

@@ -15,13 +15,32 @@ class RegisterUsuarioViewController: UIViewController {
     @IBOutlet weak var singUpButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         // Do any additional setup after loading the view.
         passwordTextField.isSecureTextEntry = true
 
         // Configura el color de fondo para la vista principal (celeste claro)
         view.backgroundColor = UIColor(red: 173.0/255.0, green: 216.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     }
-    
+    func configureUI() {
+        // Configura el estilo de los textfields
+        configureTextField(emailTextField)
+        configureTextField(passwordTextField)
+
+        // Configura el estilo del botón de inicio de sesión
+        singUpButton.layer.cornerRadius = 8.0
+        singUpButton.backgroundColor = UIColor.blue
+        singUpButton.setTitleColor(UIColor.white, for: .normal)
+    }
+
+    func configureTextField(_ textField: UITextField) {
+        textField.layer.cornerRadius = 8.0
+        textField.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        textField.textColor = UIColor.black
+        textField.tintColor = UIColor.blue
+        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder ?? "",
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    }
     
 
 
